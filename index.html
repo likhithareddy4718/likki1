@@ -28,7 +28,7 @@
             background: url('https://source.unsplash.com/1600x900/?india,heritage') no-repeat center center/cover;
         }
         button {
-            background-color: #ff4500;
+            background-color: #57200b;
             color: white;
             padding: 10px 20px;
             font-size: 18px;
@@ -38,7 +38,7 @@
             border-radius: 5px;
         }
         button:hover {
-            background-color: #e03e00;
+            background-color: #090301;
         }
         /* Main Content Section (Initially Hidden) */
         #main-content {
@@ -126,11 +126,24 @@
         padding: 10px;
         margin-top: 20px;
     }
+    .back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: #421111;
+    color: white;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.back-button:hover {
+    background-color: #482111;
+}
 </style>
 </head>
 <body>
-
-    <!-- Welcome Section -->
     <section id="welcome-section">
         <div class="welcome-container">
             <h1>Welcome to Historical Places in India</h1>
@@ -139,10 +152,12 @@
         </div>
     </section>
 <div id="main-content">
-<header>
-    <h1>Historical Places in India</h1>
-    <p>Explore India's glorious past through its iconic landmarks</p>
-</header>
+    <header>
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>Historical Places in India</h1>
+        <p>Explore India's glorious past through its iconic landmarks</p>
+    </header>
+    
 <nav>
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
@@ -213,6 +228,28 @@
         <a href="https://en.wikipedia.org/wiki/Konark_Sun_Temple" class="see-more">See More</a>
     </div>
     </div>
+    <div class="place">
+        <div class="image-box">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.TpmIyyBL-jSQ1XQYDDd_XAHaEK&pid=Api&P=0&h=180" alt="Ajanta and Ellora Caves" />
+        </div>
+        <div class="info-box">
+            <h2 style="color: red;"> Ajanta and Ellora Caves </h2>
+            <p>Rock-cut caves with Buddhist, Hindu, and Jain sculptures.
+                Dates back to the 2nd century BCE.</p>
+            <a href="https://en.wikipedia.org/wiki/Ajanta_Caves" class="see-more">See More</a>
+        </div>
+        </div>
+        <div class="place">
+            <div class="image-box">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.asm7oZzzuUqQ7gl4AZEfzgHaEK&pid=Api&P=0&h=180" alt="Mysore Palace" />
+            </div>
+            <div class="info-box">
+                <h2 style="color: red;">Mysore Palace</h2>
+                <p>A grand palace of the Wodeyar dynasty.
+                    Known for its Indo-Saracenic architecture and Dussehra celebrations.</p>
+                <a href="https://en.wikipedia.org/wiki/Mysore_Palace" class="see-more">See More</a>
+            </div>
+            </div>
 </section>
 <section id="about" class="home">
     <h2 style="color: white;">About Us</h2>
@@ -231,6 +268,11 @@
     function showMainContent() {
         document.getElementById('welcome-section').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
+    }
+
+    function goBack() {
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('welcome-section').style.display = 'flex';
     }
 </script>
 </body>
